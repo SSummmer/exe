@@ -37,11 +37,6 @@ def create_dirs(path):
             os.makedirs(dir_path, exist_ok=True)
 
 
-def synonym(file_path):
-    if os.path.exists(file_path):
-        pass
-
-
 def classify(file, path):
     file_name, t = os.path.splitext(file)
     if t in image:
