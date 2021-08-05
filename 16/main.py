@@ -4,7 +4,6 @@
 import matplotlib.pyplot as plt
 from pylab import mpl
 import csv
-from matplotlib.pyplot import MultipleLocator
 
 mpl.rcParams['font.sans-serif'] = ['Arial Unicode MS']
 mpl.rcParams['axes.unicode_minus'] = False
