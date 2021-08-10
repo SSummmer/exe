@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bilibili用户信息</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+          crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <h1 style="padding-left:100px">
+                Bilibili用户信息
+            </h1>
+        </div>
+    </div>
+</nav>
+
+<div class="container page-body">
+    <div class="col-md-9 list-group" role="main">
+        {% for user in user_list %}
+        <div class="list-group-item">
+            <a href="/biliuserinfo/detail/{{ user.mid }}">
+                <h3>{{ user.mid }}. {{ user.name }}</h3>
+            </a>
+            <p>{{ user.sign }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-3 panel panel-default panel-primary" role="complementary" style="text-align: center;">
+        <div class="panel-heading">
+            <h3 class="panel-title">粉丝数排行前十的用户</h3>
+            <h3 class="panel-title" style="padding-top:5px">mid和用户名</h3>
+        </div>
+        <table class="table table-striped table-condensed">
+            <thead>
+            <tr>
+                <!--                        <th>排名</th>-->
+                <th style="text-align: center">mid</th>
+                <th style="text-align: center">用户名</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for user in top10_user_list %}
+            <tr>
+                <!--                    <td><h4>1</h4></td>-->
+                <td><h4><a href="/biliuserinfo/detail/{{ user.mid }}">{{ user.mid }}</a></h4></td>
+                <td><h4><a href="/biliuserinfo/detail/{{ user.mid }}">{{ user.name }}</a></h4></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-3" style="text-align: center;">
+        <div class="thumbnail">
+            <div class="panel panel-default panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">bilibili用户信息分析</h3>
+<!--                <h3 class="panel-title" style="padding-top:5px">mid和用户名</h3>-->
+            </div>
+        </div>
+            <img src="/static/前1500名用户的b站等级分布情况柱状图.png" alt="png">
+            <div class="caption">
+                <p>例：前1500名用户的b站等级分布情况柱状图</p>
+            </div>
+            <p><a href="/biliuserinfo/png" class="btn btn-primary" role="button">查看更多相关信息分析</a>
+        </div>
+    </div>
+</div>
+<div class="body-footer">
+    <div class="col-md-4 col-md-offset-3">
+        <nav class="Page navigation">
+            <ul class="pagination">
+                <li>
+                    <a href="/biliuserinfo/?page={{ pre_page }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo</span>
+                    </a>
+                </li>
+                {% for n in page_num %}
+                <li><a href="/biliuserinfo/?page={{ n }}">{{ n }}</a></li>
+                {% endfor %}
+                <li>
+                    <a href="/biliuserinfo/?page={{ next_page }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+</body>
+</html>

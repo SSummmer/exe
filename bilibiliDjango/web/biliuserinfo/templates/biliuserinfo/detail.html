@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bilibili用户详细信息</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+          crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <h1 style="padding-left:10px">
+                {{ user.mid }} {{ user.name }}
+            </h1>
+        </div>
+        <div class="collapse navbar-collapse" style="padding-top:10px">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <a href="/biliuserinfo">返回bilibili用户信息首页</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container page-body">
+    <div class="container" role="main" style="text-align: center;">
+        <!--        <div class="table">-->
+        <!--            <thead>-->
+        <!--            <tr>-->
+        <!--                <td>1</td>-->
+        <!--                <td>1</td>-->
+        <!--            </tr>-->
+        <!--            </thead>-->
+        <!--            <tbody>-->
+        <!--            <tr>-->
+        <!--                <td>1</td>-->
+        <!--                <td>1</td>-->
+        <!--&lt;!&ndash;                <td><h3>mid</h3></td>&ndash;&gt;-->
+        <!--&lt;!&ndash;                <td><h3>{{ user.mid }}</h3></td>&ndash;&gt;-->
+        <!--            </tr>-->
+        <!--            <tr>-->
+        <!--                <td><h3>用户姓名</h3></td>-->
+        <!--                <td><h3>{{ user.name }}</h3></td>-->
+        <!--            </tr>-->
+        <!--            <tr>-->
+        <!--                <td><h3>用户性别</h3></td>-->
+        <!--                <td><h3>{{ user.sex }}</h3></td>-->
+        <!--            </tr>-->
+        <!--            <tr>-->
+        <!--                <td><h3>用户等级</h3></td>-->
+        <!--                <td><h3>{{ user.level }}</h3></td>-->
+        <!--            </tr>-->
+        <!--            <tr>-->
+        <!--                <td><h3>个性签名</h3></td>-->
+        <!--                <td><h3>{{ user.sign }}</h3></td>-->
+        <!--            </tr>-->
+        <!--            <tr>-->
+        <!--                <td><h3>大会员级别</h3></td>-->
+        <!--                <td><h3>{{ user.vip }}</h3></td>-->
+        <!--            </tr>-->
+        <!--            <tr>-->
+        <!--                <td><h3>粉丝勋章</h3></td>-->
+        <!--                <td><h3>{{ user.fans_medal }}</h3></td>-->
+        <!--            </tr>-->
+        <!--            <tr>-->
+        <!--                <td><h3>关注数</h3></td>-->
+        <!--                <td><h3>{{ user.following }}</h3></td>-->
+        <!--            </tr>-->
+        <!--            <tr>-->
+        <!--                <td><h3>粉丝数</h3></td>-->
+        <!--                <td><h3>{{ user.follower }}</h3></td>-->
+        <!--            </tr>-->
+
+        <h3>mid：{{ user.mid }}</h3>
+        <h3>用户姓名：{{ user.name }}</h3>
+        <h3>用户性别：{{ user.sex }}</h3>
+        <h3>用户等级：{{ user.level }}</h3>
+        <h3>个性签名：{{ user.sign }}</h3>
+        <h3>大会员级别：{{ user.vip }}</h3>
+        <h3>粉丝勋章：{{ user.fans_medal }}</h3>
+        <h3>关注数：{{ user.following }}</h3>
+        <h3>粉丝数：{{ user.follower }}</h3>
+        </tbody>
+    </div>
+</div>
+<div>
+    <nav aria-label="...">
+        <ul class="paper">
+            {% if pre.pre_mid != "#" %}
+            <li class="previous"><a href="{{ pre.pre_mid }}">
+                <span aria-hidden="true">&larr;</span> {{ pre.pre_name }}</a>
+            </li>
+            {% else %}
+            <li><span aria-hidden="true">&larr;</span> {{ pre.pre_name }}</a></li>
+            {% endif %}
+
+            {% if next.next_mid != "#" %}
+            <li class="next"><a href="{{ next.next_mid }}">
+                <span aria-hidden="true">&rarr;</span> {{ next.next_name }}</a>
+            </li>
+            {% else %}
+            <li><span aria-hidden="true">&rarr;</span> {{ next.next_name }}</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+</div>
+</body>
+</html>
