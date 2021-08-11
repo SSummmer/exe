@@ -1,3 +1,6 @@
+"""
+    将数据导入到数据后台
+"""
 import os
 import django
 import csv

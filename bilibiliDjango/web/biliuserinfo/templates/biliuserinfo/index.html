@@ -26,7 +26,7 @@
         {% for user in user_list %}
         <div class="list-group-item">
             <a href="/biliuserinfo/detail/{{ user.mid }}">
-                <h3>{{ user.mid }}. {{ user.name }}</h3>
+                <h3>{{ user.mid }} {{ user.name }}</h3>
             </a>
             <p>{{ user.sign }}</p>
         </div>
