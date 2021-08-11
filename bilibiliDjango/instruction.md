@@ -3,10 +3,12 @@
 
 ---
 ### 项目环境
+
 python 3.8.10， macOS BigSur 11.4\
 python库：django 3.2.6, requests 2.25.1, pandas 3.8.1, matplotlib 3.4.2
 ---
 ### 项目文件包说明
+
 web 包是django项目文件\
 web/user_generator.py 将bili_user_info.csv中的数据导入到django项目中\
 web/run.shell 是在本地运行该程序的脚本文件
