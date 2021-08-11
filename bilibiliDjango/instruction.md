@@ -6,6 +6,7 @@
 
 python 3.8.10， macOS BigSur 11.4\
 python库：django 3.2.6, requests 2.25.1, pandas 3.8.1, matplotlib 3.4.2
+
 ---
 ### 项目文件包说明
 
@@ -15,6 +16,7 @@ web/run.shell 是在本地运行该程序的脚本文件
 get_userinfo.py 是获取前1500名b站用户数据的爬虫文件\
 bili_user_info.csv 是存放爬虫获得的用户数据的csv文件\
 userinfo_png.py 是获取相关数据图表的pyhton文件，获得的图表存放在 web/biliuserinfo/static 中以供调用
+
 ---
 ### 项目操作说明
 1. 在终端进入 bilibiliDjango/web ，运行 python manage.py runserver ；或直接运行 web/run.shell 使该项目在本地运行
