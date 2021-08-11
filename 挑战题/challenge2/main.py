@@ -21,7 +21,7 @@ def get_info(broswer, i):
 
 
 def main():
-    with open('nfu_news.csv', 'w') as f:
+    with open('njfu_news.csv', 'w') as f:
         f.write('{:80},{:20},{}'.format("文章名称", '发布时间', '对应链接\n'))
         browser = webdriver.Chrome(executable_path='chromedriver.exe')
         browser.get('https://news.njfu.edu.cn/ybdt/')
